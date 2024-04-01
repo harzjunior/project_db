@@ -7,6 +7,25 @@ const Contact = require("../models/contactModel");
 
 const resolvers = {
   Query: {
+    countries: async () => {
+      try {
+        const countries = await Country.find();
+        return countries;
+      } catch (error) {
+        console.error("Error fetching countries:", error);
+        throw new Error("Failed to fetch countries");
+      }
+    },
+
+    country: async (_, { id }) => {
+      try {
+        const country = await Country.findById(id);
+        return country;
+      } catch (error) {
+        console.error("Error fetching country:", error);
+        throw new Error("Failed to fetch country");
+      }
+    },
     addresses: async () => {
       try {
         const addresses = await Address.find();

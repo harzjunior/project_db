@@ -11,6 +11,7 @@ async function fetchData() {
             query Countries {
               countries {
                 country_name
+                createdAt
               }
               cities {
                 city_name
@@ -54,61 +55,103 @@ async function fetchData() {
     if (data) {
       // Display countries
       if (data.countries) {
-        data.countries.forEach((country) => {
-          const countryElement = document.createElement("div");
-          countryElement.textContent = `Country: ${country.country_name}`;
-          dataContainer.appendChild(countryElement);
-        });
+        const countriesTable = createTable("Countries", data.countries, [
+          "Country Name",
+          "created At",
+        ]);
+        dataContainer.appendChild(countriesTable);
       }
 
       // Display cities
       if (data.cities) {
-        data.cities.forEach((city) => {
-          const cityElement = document.createElement("div");
-          cityElement.textContent = `City: ${city.city_name}, Created At: ${city.createdAt}`;
-          dataContainer.appendChild(cityElement);
-        });
+        const citiesTable = createTable("Cities", data.cities, [
+          "City Name",
+          "Created At",
+        ]);
+        dataContainer.appendChild(citiesTable);
       }
 
       // Display addresses
       if (data.addresses) {
-        data.addresses.forEach((address) => {
-          const addressElement = document.createElement("div");
-          addressElement.textContent = `Postal Code: ${address.postal_code}, Street Address: ${address.street_address}, Created At: ${address.createdAt}`;
-          dataContainer.appendChild(addressElement);
-        });
+        const addressesTable = createTable("Addresses", data.addresses, [
+          "Postal Code",
+          "Street Address",
+          "Created At",
+        ]);
+        dataContainer.appendChild(addressesTable);
       }
 
       // Display comments
       if (data.comments) {
-        data.comments.forEach((comment) => {
-          const commentElement = document.createElement("div");
-          commentElement.textContent = `Comment: ${comment.comment_text}, Created At: ${comment.createdAt}, Guest Email: ${comment.guest_email}, Guest Name: ${comment.guest_name}`;
-          dataContainer.appendChild(commentElement);
-        });
+        const commentsTable = createTable("Comments", data.comments, [
+          "Comment Text",
+          "Created At",
+          "Guest Email",
+          "Guest Name",
+        ]);
+        dataContainer.appendChild(commentsTable);
       }
 
       // Display users
       if (data.users) {
-        data.users.forEach((user) => {
-          const userElement = document.createElement("div");
-          userElement.textContent = `User: ${user.username}, Email: ${user.email}, Created At: ${user.createdAt}`;
-          dataContainer.appendChild(userElement);
-        });
+        const usersTable = createTable("Users", data.users, [
+          "Username",
+          "Email",
+          "Created At",
+        ]);
+        dataContainer.appendChild(usersTable);
       }
 
       // Display contacts
       if (data.contacts) {
-        data.contacts.forEach((contact) => {
-          const contactElement = document.createElement("div");
-          contactElement.textContent = `Contact: ${contact.name}, Email: ${contact.email}, Message: ${contact.message}, Created At: ${contact.createdAt}`;
-          dataContainer.appendChild(contactElement);
-        });
+        const contactsTable = createTable("Contacts", data.contacts, [
+          "Name",
+          "Email",
+          "Message",
+          "Created At",
+        ]);
+        dataContainer.appendChild(contactsTable);
       }
     }
   } catch (error) {
     console.error("Error fetching data:", error);
   }
+}
+
+// Helper function to create a table
+function createTable(title, rows, headers) {
+  const table = document.createElement("table");
+  table.classList.add("table");
+
+  // Add table title
+  const caption = table.createCaption();
+  caption.textContent = title;
+
+  // Add table headers
+  const headerRow = table.insertRow();
+  headers.forEach((headerText) => {
+    const th = document.createElement("th");
+    th.textContent = headerText;
+    headerRow.appendChild(th);
+  });
+
+  // Add table rows
+  rows.forEach((rowData) => {
+    const row = table.insertRow();
+    headers.forEach((header) => {
+      const cell = row.insertCell();
+      if (header.toLowerCase() === "created at") {
+        const createdAt = new Date(
+          parseInt(rowData.createdAt)
+        ).toLocaleString(); // Convert Unix timestamp to a readable date format
+        cell.textContent = createdAt;
+      } else {
+        cell.textContent = rowData[header.toLowerCase().replace(/\s/g, "_")];
+      }
+    });
+  });
+
+  return table;
 }
 
 // Call the fetchData function when the page loads
