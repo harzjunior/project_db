@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require("path");
 const { ApolloServer } = require("apollo-server-express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
@@ -15,20 +16,14 @@ const commentRoutes = require("./routes/commentRoutes");
 // Initialize Express app
 const app = express();
 
+// Serve static files from the 'public' directory
+app.use(express.static(path.join(__dirname, "public")));
+
 //middleware
 app.use(bodyParser.json());
 
 // Connect to MongoDB
 connectDB();
-
-mongoose
-  .connect(uri)
-  .then(() => {
-    console.log("Connected to MongoDB");
-  })
-  .catch((error) => {
-    console.error("Error connecting to MongoDB:", error);
-  });
 
 // Create an ApolloServer instance with GraphQL schema and resolvers
 const server = new ApolloServer({
