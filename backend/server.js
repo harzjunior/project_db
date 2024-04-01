@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const typeDefs = require("./graphql/schema");
 const resolvers = require("./graphql/resolvers");
+const connectDB = require("./db");
 const addressRoutes = require("./routes/addressRoutes");
 const cityRoutes = require("./routes/cityRoutes");
 const countryRoutes = require("./routes/countryRoutes");
@@ -17,8 +18,8 @@ const app = express();
 //middleware
 app.use(bodyParser.json());
 
-// Set up MongoDB connection
-let uri = "mongodb://localhost:27017/address_db"; //from mongodb Compass
+// Connect to MongoDB
+connectDB();
 
 mongoose
   .connect(uri)
