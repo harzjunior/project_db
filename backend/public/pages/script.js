@@ -49,68 +49,56 @@ async function fetchData() {
     const { data } = responseData;
 
     // Display the fetched data on the page
-    const dataContainer = document.getElementById("data-container");
-    dataContainer.innerHTML = "";
-
     if (data) {
       // Display countries
       if (data.countries) {
-        const countriesTable = createTable("Countries", data.countries, [
-          "Country Name",
-          "created At",
+        populateTable("countries-table", data.countries, [
+          "country_name",
+          "createdAt",
         ]);
-        dataContainer.appendChild(countriesTable);
       }
 
       // Display cities
       if (data.cities) {
-        const citiesTable = createTable("Cities", data.cities, [
-          "City Name",
-          "Created At",
-        ]);
-        dataContainer.appendChild(citiesTable);
+        populateTable("cities-table", data.cities, ["city_name", "createdAt"]);
       }
 
       // Display addresses
       if (data.addresses) {
-        const addressesTable = createTable("Addresses", data.addresses, [
-          "Postal Code",
-          "Street Address",
-          "Created At",
+        populateTable("addresses-table", data.addresses, [
+          "postal_code",
+          "street_address",
+          "createdAt",
         ]);
-        dataContainer.appendChild(addressesTable);
       }
 
       // Display comments
       if (data.comments) {
-        const commentsTable = createTable("Comments", data.comments, [
-          "Comment Text",
-          "Created At",
-          "Guest Email",
-          "Guest Name",
+        populateTable("comments-table", data.comments, [
+          "comment_text",
+          "createdAt",
+          "guest_email",
+          "guest_name",
         ]);
-        dataContainer.appendChild(commentsTable);
       }
 
       // Display users
       if (data.users) {
-        const usersTable = createTable("Users", data.users, [
-          "Username",
-          "Email",
-          "Created At",
+        populateTable("users-table", data.users, [
+          "username",
+          "email",
+          "createdAt",
         ]);
-        dataContainer.appendChild(usersTable);
       }
 
       // Display contacts
       if (data.contacts) {
-        const contactsTable = createTable("Contacts", data.contacts, [
-          "Name",
-          "Email",
-          "Message",
-          "Created At",
+        populateTable("contacts-table", data.contacts, [
+          "name",
+          "email",
+          "message",
+          "createdAt",
         ]);
-        dataContainer.appendChild(contactsTable);
       }
     }
   } catch (error) {
@@ -118,40 +106,29 @@ async function fetchData() {
   }
 }
 
-// Helper function to create a table
-function createTable(title, rows, headers) {
-  const table = document.createElement("table");
-  table.classList.add("table");
+// Helper function to populate table body
+function populateTable(containerId, rows, keys) {
+  const container = document.getElementById(containerId);
+  container.innerHTML = ""; // Clear previous content
 
-  // Add table title
-  const caption = table.createCaption();
-  caption.textContent = title;
+  const tbody = document.createElement("tbody");
 
-  // Add table headers
-  const headerRow = table.insertRow();
-  headers.forEach((headerText) => {
-    const th = document.createElement("th");
-    th.textContent = headerText;
-    headerRow.appendChild(th);
-  });
-
-  // Add table rows
   rows.forEach((rowData) => {
-    const row = table.insertRow();
-    headers.forEach((header) => {
-      const cell = row.insertCell();
-      if (header.toLowerCase() === "created at") {
-        const createdAt = new Date(
-          parseInt(rowData.createdAt)
-        ).toLocaleString(); // Convert Unix timestamp to a readable date format
+    const row = document.createElement("tr");
+    keys.forEach((key) => {
+      const cell = document.createElement("td");
+      if (key.toLowerCase() === "createdat") {
+        const createdAt = new Date(parseInt(rowData[key])).toLocaleString(); // Convert Unix timestamp to a readable date format
         cell.textContent = createdAt;
       } else {
-        cell.textContent = rowData[header.toLowerCase().replace(/\s/g, "_")];
+        cell.textContent = rowData[key];
       }
+      row.appendChild(cell);
     });
+    tbody.appendChild(row);
   });
 
-  return table;
+  container.appendChild(tbody);
 }
 
 // Call the fetchData function when the page loads

@@ -48,7 +48,7 @@ startApolloServer().then(() => {
   app.use("/api/comment", commentRoutes);
 
   // Start the Express server
-  const PORT = process.env.PORT || 4000;
+  const PORT = process.env.PORT || 3000;
   app.listen(PORT, () => {
     console.log(
       `Server is running on http://localhost:${PORT}${server.graphqlPath}`
