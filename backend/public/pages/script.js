@@ -52,7 +52,7 @@ async function fetchData() {
     if (data) {
       // Display countries
       if (data.countries) {
-        populateTable("countries-table", data.countries, [
+        populateTable("countries-tbody", data.countries, [
           "country_name",
           "createdAt",
         ]);
@@ -60,12 +60,12 @@ async function fetchData() {
 
       // Display cities
       if (data.cities) {
-        populateTable("cities-table", data.cities, ["city_name", "createdAt"]);
+        populateTable("cities-tbody", data.cities, ["city_name", "createdAt"]);
       }
 
       // Display addresses
       if (data.addresses) {
-        populateTable("addresses-table", data.addresses, [
+        populateTable("addresses-tbody", data.addresses, [
           "postal_code",
           "street_address",
           "createdAt",
@@ -74,7 +74,7 @@ async function fetchData() {
 
       // Display comments
       if (data.comments) {
-        populateTable("comments-table", data.comments, [
+        populateTable("comments-tbody", data.comments, [
           "comment_text",
           "createdAt",
           "guest_email",
@@ -84,7 +84,7 @@ async function fetchData() {
 
       // Display users
       if (data.users) {
-        populateTable("users-table", data.users, [
+        populateTable("users-tbody", data.users, [
           "username",
           "email",
           "createdAt",
@@ -93,7 +93,7 @@ async function fetchData() {
 
       // Display contacts
       if (data.contacts) {
-        populateTable("contacts-table", data.contacts, [
+        populateTable("contacts-tbody", data.contacts, [
           "name",
           "email",
           "message",
@@ -111,8 +111,6 @@ function populateTable(containerId, rows, keys) {
   const container = document.getElementById(containerId);
   container.innerHTML = ""; // Clear previous content
 
-  const tbody = document.createElement("tbody");
-
   rows.forEach((rowData) => {
     const row = document.createElement("tr");
     keys.forEach((key) => {
@@ -125,10 +123,11 @@ function populateTable(containerId, rows, keys) {
       }
       row.appendChild(cell);
     });
-    tbody.appendChild(row);
+    container.appendChild(row);
   });
 
-  container.appendChild(tbody);
+  // Once the table is populated, remove the "hidden" class to display it
+  container.classList.remove("hidden");
 }
 
 // Call the fetchData function when the page loads
