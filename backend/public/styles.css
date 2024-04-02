@@ -41,8 +41,21 @@ h1 {
 
 caption {
   padding: 20px;
-  background-color: #424242;
-  color: #f2f2f2;
+  background-color: #555;
+  color: #f3f3f3;
+}
+
+thead th {
+  background-color: #bbb;
+}
+
+#countries-tbody,
+#cities-table,
+#addresses-table,
+#comments-tbody,
+#users-tbody,
+#contacts-table {
+  color: #444;
 }
 
 .table th,
