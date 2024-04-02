@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../styles.css"> <!-- Link to your CSS file -->
+</head>
+
+<body>
+    <div class="main">
+        <div class="content">
+            <nav class="navbar">
+                <div class="left">
+                    <a href="admin.html">Admin</a>
+                    <a href="city.html">City</a>
+                    <a href="country.html">Country</a>
+                    <a href="address.html">Address</a>
+                    <a href="register.html">Register</a>
+                </div>
+                <div class="middle">
+                    <input type="text" placeholder="Search...">
+                </div>
+                <div class="right">
+                    <a href="/">Home</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+        </div>
+        <div class="main-content">
+            <header>
+                <h1>Login</h1>
+            </header>
+            <section id="login-section">
+                <form id="loginForm">
+                    <div class="input-label">
+                        <label for="loginUsername">Username</label>
+                        <input type="text" id="loginUsername" name="loginUsername" required>
+                    </div>
+                    <div class="input-label">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" id="loginPassword" name="loginPassword" required>
+                    </div>
+                    <button type="submit" id="loginBtn">Login</button>
+                    <div class="login-btn">
+                        <div id="errorMessages" class="error-message"></div>
+                    </div>
+                </form>
+            </section>
+        </div>
+        <footer class="footer">
+            <p>&copy; 2024 Address Book</p>
+        </footer>
+    </div>
+
+    <script type="module" src="login.js"></script>
+</body>
+
+</html>

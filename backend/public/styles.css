@@ -1,13 +1,154 @@
-body {
-  font-family: Arial, sans-serif;
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-.container {
-  max-width: 800px;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main {
+  /* max-width: 800px;
   margin: 0 auto;
+  padding: 20px; */
+  flex: 1; /* Let .main take up the available space */
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.main-content {
+  flex: 1; /* Let .main-content take up the available space */
   padding: 20px;
+}
+
+.main-content header {
+  width: 80vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.main-content header code {
+  font-weight: 500;
+}
+
+/* Add this animation section to your existing CSS file */
+
+/* Animation for button click */
+@keyframes buttonClick {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Styles for buttons */
+#adminBtn button {
+  background-color: #434343;
+  font-weight: 500;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: none;
+  border-radius: 3px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
+}
+
+#adminBtn button:hover {
+  background-color: #fff;
+  color: #434343;
+  border: #434343 solid 1px;
+}
+
+/* Apply animation on button click */
+#adminBtn button:active {
+  animation: buttonClick 0.3s ease;
+}
+
+/* Styles for the navbar */
+.navbar {
+  background-color: #333;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+/* Styles for the search input */
+.navbar input[type="text"] {
+  width: 70%;
+  padding: 8px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+/* Styles for the left, middle, and right sections of the navbar */
+.navbar .left {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .middle {
+  flex: 1;
+  text-align: center;
+}
+
+.navbar .right {
+  display: flex;
+  align-items: center;
+}
+
+header {
+  color: black;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  border-bottom: 2px solid #9d9b9b;
+}
+
+header h1 {
+  margin: 0;
+}
+
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+  margin-top: auto; /* Stick the footer to the bottom */
 }
 
 h1 {
@@ -25,6 +166,97 @@ h1 {
   margin-bottom: 10px;
 }
 
+/* About page specific styles */
+#about-section {
+  margin-top: 20px;
+}
+
+#about-section article {
+  margin-bottom: 40px;
+}
+
+#about-section h2 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+#about-section p {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+#about-section ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+#about-section blockquote {
+  font-style: italic;
+  color: #888;
+  margin-top: 20px;
+}
+
+#about-section blockquote p {
+  margin-bottom: 10px;
+}
+
+#about-section blockquote cite {
+  color: #444;
+}
+
+/* Contact page specific styles */
+#contact-section,
+#login-section,
+#register-section {
+  margin-top: 20px;
+}
+
+#contactForm,
+#commentForm,
+#loginForm,
+#registerForm {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+#contactForm button,
+#commentForm button,
+#loginForm button,
+#registerForm button {
+  float: right;
+}
+
+.input-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  gap: 20px;
+}
+
+.input-label label {
+  display: block;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.input-label input[type="text"],
+.input-label input[type="password"],
+.input-label input[type="email"],
+.input-label textarea {
+  width: 80%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.input-label textarea {
+  height: 150px;
+}
+
 /* Table styles */
 .table-container {
   width: 95%;
@@ -33,10 +265,123 @@ h1 {
   table-layout: auto;
 }
 
+#logoutBtn {
+  background-color: #ccc;
+  color: #434343;
+  padding: 5px 20px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+#logoutBtn:hover {
+  background-color: #999;
+  color: #fff;
+}
+
+button[type="submit"] {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 80%;
+}
+
+button[type="submit"]:hover {
+  background-color: #555;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 20px 10px;
+  }
+
+  .navbar {
+    padding: 10px;
+  }
+
+  .navbar .left,
+  .navbar .right {
+    display: none;
+  }
+}
+
+/* ====================blog================== */
+#blog-section,
+#commentList {
+  width: 70vw;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+#comment-section h2 {
+  width: 80vw;
+  margin: 20px auto;
+}
+
+.comment-item {
+  padding-bottom: 10px;
+}
+
+.comment-text {
+  width: fit-content;
+  border-bottom: 1px solid #9d9b9b;
+}
+
+#commentForm {
+  margin-top: 5rem;
+}
+
+p {
+  color: #555;
+}
+
+h2,
+h3,
+h4 {
+  color: #434343;
+}
+
+h6 {
+  color: #666;
+}
+
+section h2 {
+  margin: 20px 0;
+  border-bottom: 1px solid #bbbbbb;
+}
+
+article p {
+  padding-bottom: 10px;
+}
+
+ol {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 30px;
+}
+
+pre {
+  background-color: #dddd;
+  width: fit-content;
+  margin: 20px auto;
+  padding-top: 30px;
+  padding-right: 30px;
+}
+
 .table {
+  width: 95%;
   border-collapse: collapse;
-  width: 100%;
-  margin-bottom: 40px;
+  margin: 20px auto;
+  table-layout: auto;
 }
 
 caption {
@@ -50,11 +395,11 @@ thead th {
 }
 
 #countries-tbody,
-#cities-table,
-#addresses-table,
+#cities-tbody,
+#addresses-tbody,
 #comments-tbody,
 #users-tbody,
-#contacts-table {
+#contacts-tbody {
   color: #444;
 }
 
@@ -84,7 +429,24 @@ table td:last-child {
   margin-bottom: 10px;
 }
 
+#cities-tbody tr:nth-child(even),
+#addresses-tbody tr:nth-child(even),
+#comments-tbody tr:nth-child(even),
+#users-tbody tr:nth-child(even),
+#countries-tbody tr:nth-child(even),
+#contacts-tbody tr:nth-child(even) {
+  background-color: #ddd;
+}
+
 /* Add a class to initially hide the tables and their captions */
 .hidden {
   display: none;
+}
+
+.message-cell {
+  max-width: 150px; /* Adjust as needed */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer; /* Show pointer cursor when hovering over the cell */
 }

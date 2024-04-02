@@ -9,85 +9,115 @@
 </head>
 
 <body>
-    <div class="container">
-        <h1>GraphQL Data Display</h1>
-        <!-- Table for countries -->
-        <table id="countries-table" class="table">
-            <caption>Countries</caption>
-            <thead>
-                <tr>
-                    <th>Country Name</th>
-                    <th>Created At</th>
-                </tr>
-            </thead>
-            <tbody id="countries-tbody"></tbody>
-        </table>
+    <div class="main">
+        <div class="content">
+            <nav class="navbar">
+                <div class="left">
+                    <a href="./pages/admin.html">Admin</a>
+                    <a href="./pages/city.html">City</a>
+                    <a href="./pages/country.html">Country</a>
+                    <a href="./pages/address.html">Address</a>
+                    <a href="./pages/login.html" id="loginBtn">Login</a>
+                    <a href="./pages/register.html" id="registerBtn">Register</a>
+                </div>
+                <div class="middle">
+                    <input type="text" id="searchInput" placeholder="Search...">
+                </div>
+                <div class="right">
+                    <a href="/">Home</a>
+                    <a href="./pages/blog.html">Blog</a>
+                    <a href="./pages/about.html">About</a>
+                    <a href="./pages/contact.html">Contact</a>
+                </div>
+            </nav>
+        </div>
+        <div class="main-content">
+            <header>
+                <h1>GraphQL Data Display</h1>
+            </header>
+            <section id="address-list">
+                <!-- Table for countries -->
+                <table id="countries-table" class="table">
+                    <caption>Countries</caption>
+                    <thead>
+                        <tr>
+                            <th>Country Name</th>
+                            <th>Created At</th>
+                        </tr>
+                    </thead>
+                    <tbody id="countries-tbody"></tbody>
+                </table>
 
-        <!-- Table for cities -->
-        <table id="cities-table" class="table">
-            <caption>Cities</caption>
-            <thead>
-                <tr>
-                    <th>City Name</th>
-                    <th>Created At</th>
-                </tr>
-            </thead>
-            <tbody id="cities-tbody"></tbody>
-        </table>
+                <!-- Table for cities -->
+                <table id="cities-table" class="table">
+                    <caption>Cities</caption>
+                    <thead>
+                        <tr>
+                            <th>City Name</th>
+                            <th>Created At</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cities-tbody"></tbody>
+                </table>
 
-        <!-- Table for addresses -->
-        <table id="addresses-table" class="table">
-            <caption>Addresses</caption>
-            <thead>
-                <tr>
-                    <th>Postal Code</th>
-                    <th>Street Address</th>
-                    <th>Created At</th>
-                </tr>
-            </thead>
-            <tbody id="addresses-tbody"></tbody>
-        </table>
+                <!-- Table for addresses -->
+                <table id="addresses-table" class="table">
+                    <caption>Addresses</caption>
+                    <thead>
+                        <tr>
+                            <th>Postal Code</th>
+                            <th>Street Address</th>
+                            <th>Created At</th>
+                        </tr>
+                    </thead>
+                    <tbody id="addresses-tbody"></tbody>
+                </table>
 
-        <!-- Table for comments -->
-        <table id="comments-table" class="table">
-            <caption>Comments</caption>
-            <thead>
-                <tr>
-                    <th>Comment Text</th>
-                    <th>Created At</th>
-                    <th>Guest Email</th>
-                    <th>Guest Name</th>
-                </tr>
-            </thead>
-            <tbody id="comments-tbody"></tbody>
-        </table>
+                <!-- Table for comments -->
+                <table id="comments-table" class="table">
+                    <caption>Comments</caption>
+                    <thead>
+                        <tr>
+                            <th>Comment Text</th>
+                            <th>Created At</th>
+                            <th>Guest Email</th>
+                            <th>Guest Name</th>
+                        </tr>
+                    </thead>
+                    <tbody id="comments-tbody"></tbody>
+                </table>
 
-        <!-- Table for users -->
-        <table id="users-table" class="table">
-            <caption>Users</caption>
-            <thead>
-                <tr>
-                    <th>Username</th>
-                    <th>Email</th>
-                    <th>Created At</th>
-                </tr>
-            </thead>
-            <tbody id="users-tbody"></tbody>
-        </table>
+                <!-- Table for users -->
+                <table id="users-table" class="table">
+                    <caption>Users</caption>
+                    <thead>
+                        <tr>
+                            <th>Username</th>
+                            <th>Email</th>
+                            <th>Created At</th>
+                        </tr>
+                    </thead>
+                    <tbody id="users-tbody"></tbody>
+                </table>
 
-        <!-- Table for contacts -->
-        <table id="contacts-table" class="table">
-            <caption>Contacts</caption>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Message</th>
-                    <th>Created At</th>
-                </tr>
-            </thead>
-            <tbody id="contacts-tbody"></tbody>
-        </table>
+                <!-- Table for contacts -->
+                <table id="contacts-table" class="table">
+                    <caption>Contacts</caption>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Message</th>
+                            <th>Created At</th>
+                        </tr>
+                    </thead>
+                    <tbody id="contacts-tbody"></tbody>
+                </table>
+            </section>
+        </div>
+        <footer class="footer">
+            <p>&copy; 2024 Address Book</p>
+        </footer>
     </div>
 
     <script src="./pages/script.js"></script>

@@ -1,0 +1,75 @@
+<!-- address.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Address Page</title>
+    <link rel="stylesheet" href="../styles.css"> <!-- Link to your CSS file -->
+</head>
+
+<body>
+    <div class="main">
+        <div class="content">
+            <nav class="navbar">
+                <div class="left">
+                    <a href="admin.html">Admin</a>
+                    <a href="city.html">City</a>
+                    <a href="country.html">Country</a>
+                    <a href="address.html">Address</a>
+                </div>
+                <div class="middle">
+                    <input type="text" id="searchInput" placeholder="Search...">
+                </div>
+                <div class="right">
+                    <a href="/">Home</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </nav>
+        </div>
+        <div class="main-content">
+            <header>
+                <code id="usernameDisplay">username</code>
+                <h1>Address Book</h1>
+                <div class="choice">
+                    <code>Country of the day: </code>
+                    <code id="countryDisplay">country</code>
+                </div>
+            </header>
+
+            <div id="address-list">
+                <!-- Address list will be populated dynamically -->
+                <table id="addressTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Street Address</th>
+                            <th>City</th>
+                            <th>Country</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <p>&copy; 2024 Address Book</p>
+        </footer>
+    </div>
+    <script src="../script.js"></script>
+    <script src="./search.js" type="module"></script>
+    <script>
+        // Retrieve username from local storage
+        const username = localStorage.getItem("username");
+
+        // Update HTML content with the username
+        document.getElementById("usernameDisplay").textContent = username ? username : 'Guru';
+    </script>
+
+</body>
+
+</html>
