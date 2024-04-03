@@ -46,6 +46,23 @@ const createContact = async (req, res) => {
   }
 };
 
+// Fetch contacts from the backend
+// fetch("/api/contacts")
+//   .then((response) => response.json())
+//   .then((contacts) => {
+//     contacts.forEach((contact) => {
+//       const contactElement = document.createElement("div");
+//       contactElement.innerHTML = `
+//         <h3>${contact.name}</h3>
+//         <p>Email: ${contact.email}</p>
+//         <p>Message: ${contact.message}</p>
+//         <p>Created At: ${new Date(contact.createdAt).toLocaleString()}</p>
+//       `;
+//       document.getElementById("contacts").appendChild(contactElement);
+//     });
+//   })
+//   .catch((error) => console.error("Error fetching contacts:", error));
+
 // Export controllers
 module.exports = {
   getAllContacts,

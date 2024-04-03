@@ -85,11 +85,12 @@ function renderComments(comments) {
       year: "numeric",
       month: "long",
       day: "numeric",
-      hour: "numeric",
+      hour: "2-digit", // Use 2-digit format for hours (24-hour format)
       minute: "numeric",
       second: "numeric",
       timeZoneName: "short",
       timeZone: "Africa/Lagos", // WAT time zone
+      hour12: false, // Ensure 24-hour format
     };
     const formattedDate = createdAtDate.toLocaleString("en-US", options);
     commentCreatedAt.textContent = formattedDate;

@@ -37,7 +37,6 @@ const createComment = async (req, res) => {
   try {
     const { guest_name, guest_email, comment_text } = req.body;
     const newComment = new Comment({
-      // user_id,
       guest_name,
       guest_email,
       comment_text,
