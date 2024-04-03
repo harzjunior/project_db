@@ -12,6 +12,8 @@ const countryRoutes = require("./routes/countryRoutes");
 const contactRoutes = require("./routes/contactRoutes");
 const userRoutes = require("./routes/userRoutes");
 const commentRoutes = require("./routes/commentRoutes");
+const registerRoutes = require("./routes/registerRoutes");
+const loginRoutes = require("./routes/loginRoutes");
 
 // Initialize Express app
 const app = express();
@@ -46,6 +48,8 @@ startApolloServer().then(() => {
   app.use("/api/contact", contactRoutes);
   app.use("/api/user", userRoutes);
   app.use("/api/comment", commentRoutes);
+  app.use("/api/register", registerRoutes);
+  app.use("/api/login", loginRoutes);
 
   // Start the Express server
   const PORT = process.env.PORT || 3000;
