@@ -1,6 +1,4 @@
 const mongoose = require("mongoose");
-
-// controllers/commentController.js
 const Comment = require("../models/commentModel.js");
 
 // Controller to get all comments
@@ -37,9 +35,9 @@ const getCommentById = async (req, res) => {
 // Controller to create a new comment
 const createComment = async (req, res) => {
   try {
-    const { user_id, guest_name, guest_email, comment_text } = req.body;
+    const { guest_name, guest_email, comment_text } = req.body;
     const newComment = new Comment({
-      user_id,
+      // user_id,
       guest_name,
       guest_email,
       comment_text,
