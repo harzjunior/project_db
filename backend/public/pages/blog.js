@@ -80,17 +80,18 @@ function renderComments(comments) {
     // commentCreatedAt.textContent = new Date(comment.createdAt).toLocaleString(); // Convert createdAt to a readable date format
     // Convert createdAt to a readable date format
     const createdAtDate = new Date(comment.createdAt);
-    const dayOfWeek = [
-      "Sunday",
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-    ];
-    const dayName = dayOfWeek[createdAtDate.getDay()];
-    commentCreatedAt.textContent = dayName;
+    const options = {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+      hour: "numeric",
+      minute: "numeric",
+      second: "numeric",
+      timeZoneName: "short",
+    };
+    const formattedDate = createdAtDate.toLocaleString("en-US", options);
+    commentCreatedAt.textContent = formattedDate;
     // Append the updated comment item to the commentList
     commentList.appendChild(commentItem);
   });
