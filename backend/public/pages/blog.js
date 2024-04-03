@@ -77,8 +77,20 @@ function renderComments(comments) {
     commentName.textContent = comment.guest_name || "Guest";
     commentEmail.textContent = comment.guest_email || "guest@example.com";
     commentText.textContent = comment.comment_text;
-    commentCreatedAt.textContent = new Date(comment.createdAt).toLocaleString(); // Convert createdAt to a readable date format
-
+    // commentCreatedAt.textContent = new Date(comment.createdAt).toLocaleString(); // Convert createdAt to a readable date format
+    // Convert createdAt to a readable date format
+    const createdAtDate = new Date(comment.createdAt);
+    const dayOfWeek = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
+    const dayName = dayOfWeek[createdAtDate.getDay()];
+    commentCreatedAt.textContent = dayName;
     // Append the updated comment item to the commentList
     commentList.appendChild(commentItem);
   });
