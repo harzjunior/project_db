@@ -89,6 +89,7 @@ function renderComments(comments) {
       minute: "numeric",
       second: "numeric",
       timeZoneName: "short",
+      timeZone: "Africa/Lagos", // WAT time zone
     };
     const formattedDate = createdAtDate.toLocaleString("en-US", options);
     commentCreatedAt.textContent = formattedDate;
