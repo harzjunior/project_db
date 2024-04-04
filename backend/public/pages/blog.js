@@ -30,8 +30,7 @@ document
       .then((data) => {
         // Clear the form fields
         document.getElementById("commentForm").reset();
-        console.log(data); // Log the response for debugging
-        alert("Comment submitted successfully!");
+        // alert("Comment submitted successfully!");
         // Fetch and display comments after submission
         fetchAndDisplayComments();
       })
