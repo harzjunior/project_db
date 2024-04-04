@@ -24,6 +24,18 @@ const register = async (req, res) => {
   }
 };
 
+// Controller function to get all registered users
+const getAllUsers = async (req, res) => {
+  try {
+    const users = await Register.find();
+    res.status(200).json(users);
+  } catch (error) {
+    console.error("Error getting users:", error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+};
+
 module.exports = {
   register,
+  getAllUsers,
 };

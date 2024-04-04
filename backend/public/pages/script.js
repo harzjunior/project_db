@@ -8,7 +8,7 @@ async function fetchData() {
       },
       body: JSON.stringify({
         query: `
-            query Countries {
+            query Address {
               countries {
                 country_name
                 createdAt
@@ -59,7 +59,7 @@ async function fetchData() {
       }
 
       // Display cities
-      if (data.cities) {
+      if (data && data.cities) {
         populateTable("cities-tbody", data.cities, ["city_name", "createdAt"]);
       }
 
