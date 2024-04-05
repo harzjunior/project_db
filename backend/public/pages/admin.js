@@ -1,5 +1,3 @@
-// admin.js
-
 document.addEventListener("DOMContentLoaded", () => {
   const contactsBtn = document.getElementById("contactsBtn");
   const usersBtn = document.getElementById("usersBtn");
@@ -66,3 +64,27 @@ document.addEventListener("DOMContentLoaded", () => {
     await fetchAndPopulateUsers();
   });
 });
+
+// Check if the user is logged in and hide the login button if they are
+const isLoggedIn =
+  localStorage.getItem("token") && localStorage.getItem("username");
+if (isLoggedIn) {
+  document.getElementById("logoutBtn").style.display = "block";
+  // document.getElementById("loginBtn").style.display = "none";
+} else {
+  document.getElementById("logoutBtn").style.display = "none";
+  // document.getElementById("loginBtn").style.display = "block";
+}
+
+// Add event listener to the logout button
+document.getElementById("logoutBtn").addEventListener("click", logout);
+
+// Function to handle logout
+function logout() {
+  // Clear session storage
+  sessionStorage.clear();
+  localStorage.removeItem("token");
+  localStorage.removeItem("username");
+  // Redirect to logout page or any other desired page
+  window.location.href = "./address.html";
+}

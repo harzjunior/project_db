@@ -130,5 +130,20 @@ function populateTable(containerId, rows, keys) {
   container.classList.remove("hidden");
 }
 
+// Check if the user is logged in and hide the login button if they are
+const isLoggedIn =
+  localStorage.getItem("token") && localStorage.getItem("username");
+const loginBtn = document.getElementById("loginBtn");
+const registerBtn = document.getElementById("registerBtn");
+if (loginBtn && registerBtn) {
+  if (isLoggedIn) {
+    loginBtn.style.display = "none";
+    registerBtn.style.display = "none";
+  } else {
+    loginBtn.style.display = "block";
+    registerBtn.style.display = "block";
+  }
+}
+
 // Call the fetchData function when the page loads
 window.addEventListener("load", fetchData);
