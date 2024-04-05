@@ -42,7 +42,7 @@ async function fetchCityData() {
       }),
     });
     const responseData = await response.json();
-    console.log("Response from server:", responseData); // Log the response data
+    // console.log("Response from server:", responseData); // Log the response data
 
     const { data } = responseData;
 

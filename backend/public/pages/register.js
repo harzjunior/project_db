@@ -31,7 +31,7 @@ document
       .then((data) => {
         // Clear the form fields
         document.getElementById("registerForm").reset();
-        console.log(data); // Log the response for debugging
+        // console.log(data); // Log the response for debugging
         alert("User registered successfully!");
         // Redirect to the home page
         window.location.href = "./login.html";

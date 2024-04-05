@@ -53,7 +53,6 @@ document
         localStorage.setItem("username", username);
 
         // Optional: Redirect to a different page or update UI for authenticated user
-        console.log("User logged in successfully!");
 
         // Clear the input fields and remove the error class and messages
         loginUsernameInput.value = "";

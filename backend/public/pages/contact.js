@@ -30,7 +30,6 @@ document
       .then((data) => {
         // Clear the form fields
         document.getElementById("contactForm").reset();
-        console.log(data); // Log the response for debugging
         alert("Message submitted successfully!");
         // Fetch and display contacts after submission
         // fetchAndDisplayContacts();
