@@ -1,5 +1,6 @@
 const express = require("express");
 const path = require("path");
+// const cors = require("cors"); // Import the cors middleware
 const { ApolloServer } = require("apollo-server-express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
@@ -17,6 +18,9 @@ const loginRoutes = require("./routes/loginRoutes");
 
 // Initialize Express app
 const app = express();
+
+// Use the cors middleware to handle CORS
+// app.use(cors());
 
 // Serve static files from the 'public' directory
 app.use(express.static(path.join(__dirname, "public")));

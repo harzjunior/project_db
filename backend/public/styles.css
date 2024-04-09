@@ -51,6 +51,29 @@ body {
   font-weight: 500;
 }
 
+.table-wrapper {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+#countries-table,
+#cities-table,
+#addresses-table,
+#comments-table,
+#users-table,
+#contacts-table {
+  width: 100%;
+}
+
+#countries-tbody,
+#cities-tbody,
+#addresses-tbody,
+#comments-tbody,
+#users-tbody,
+#contacts-tbody {
+  color: #444;
+}
+
 /* Add this animation section to your existing CSS file */
 
 /* Animation for button click */
@@ -378,10 +401,9 @@ pre {
 }
 
 .table {
-  width: 95%;
+  min-width: 95%;
   border-collapse: collapse;
   margin: 20px auto;
-  table-layout: auto;
 }
 
 caption {
@@ -394,22 +416,16 @@ thead th {
   background-color: #bbb;
 }
 
-#countries-tbody,
-#cities-tbody,
-#addresses-tbody,
-#comments-tbody,
-#users-tbody,
-#contacts-tbody {
-  color: #444;
-}
-
 .table th,
 .table td {
   border: 1px solid #424242;
   text-align: center;
   padding: 8px;
   word-wrap: break-word;
-  max-width: 500px; /* Set maximum width for cell content */
+  max-width: 250px; /* Set maximum width for cell content */
+  /* white-space: nowrap; Prevent text wrapping */
+  overflow: hidden; /* Hide overflowing content */
+  text-overflow: ellipsis; /* Show ellipsis for truncated text */
 }
 
 table td:last-child {
