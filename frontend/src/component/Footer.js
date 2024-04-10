@@ -1,5 +1,6 @@
 "use client";
 
+import { Link } from "react-scroll";
 import { NavLinks } from "./NavLinks";
 import RecentBlogSection from "./RecentBlogSection";
 import SocialLinks from "./SocialLinks";
@@ -33,16 +34,16 @@ export function Footer() {
                       </span>
                     </li>
                     <li>
-                      <a href="#">
+                      <Link href="#">
                         <span className="icon icon-phone"></span>
                         <span className="text">+234 810 7060 160</span>
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a href="#">
+                      <Link href="#">
                         <span className="icon icon-envelope"></span>
                         <span className="text">info@bytebbuddiez.com</span>
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </div>
@@ -90,9 +91,9 @@ export function Footer() {
                 Copyright &copy;
                 {currentYear} All rights reserved | This website is made with{" "}
                 <i className="icon-heart" aria-hidden="true"></i> by{" "}
-                <a href="https://harunabah.tech" target="_blank">
+                <Link href="https://harunabah.tech" target="_blank">
                   ByteBuddiez
-                </a>
+                </Link>
               </p>
             </div>
           </div>

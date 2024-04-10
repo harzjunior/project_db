@@ -18,8 +18,7 @@ export function SliderItem({ backgroundImage, title, subtitle }) {
               href="/home"
               label="Read More"
               padClass="true"
-              title={title}
-              subtitle={subtitle}
+              title={title + " " + subtitle}
             />
           </div>
         </div>

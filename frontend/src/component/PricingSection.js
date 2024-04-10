@@ -10,6 +10,7 @@ export default function PricingSection() {
           imgSrc={prix.imgSrc}
           title={prix.title}
           price={prix.price}
+          href={prix.url}
           duration={prix.duration}
           description={prix.description}
           btnColor={prix.btnColor}

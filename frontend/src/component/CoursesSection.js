@@ -11,6 +11,7 @@ function CoursesSection({ isHomePage }) {
           key={index}
           imgSrc={course.imgSrc}
           title={course.title}
+          href={course.url}
           classTime={course.classTime}
           description={course.description}
         />

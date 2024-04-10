@@ -4,6 +4,7 @@ export default function PriceItem({
   imgSrc,
   title,
   price,
+  href,
   duration,
   description,
   btnColor,
@@ -26,8 +27,9 @@ export default function PriceItem({
           <p>{description}</p>
         </div>
         <ActionButton
-          href="#"
+          href={href}
           label="Take A Course"
+          title={title + " Plan"}
           ActionClass={btnColor}
           padClass={true}
         />

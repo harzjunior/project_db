@@ -20,7 +20,12 @@ export function WelcomeSection() {
           but also fosters friendships and a love for learning. We're more than
           just coding – we're ByteBuddiez, where knowledge is a cuddle away!.
         </p>
-        <ActionButton href="#" label="Read More" padClass="true" />
+        <ActionButton
+          href="/about"
+          title="Welcome to ByteBuddiez Learning School"
+          label="Read More"
+          padClass="true"
+        />
       </div>
     </div>
   );

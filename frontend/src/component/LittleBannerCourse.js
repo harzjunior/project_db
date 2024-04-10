@@ -19,7 +19,12 @@ export function LittleBannerCourse() {
             </p>
           </div>
           <div className="col-md-3 d-flex align-items-center">
-            <ActionButton href="#" label="Take a Course" padClass={true} />
+            <ActionButton
+              href="/courses"
+              title=""
+              label="Take a Course"
+              padClass={true}
+            />
           </div>
         </div>
       </div>
