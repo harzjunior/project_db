@@ -14,7 +14,13 @@ export function SliderItem({ backgroundImage, title, subtitle }) {
             <h1 className="mb-4">
               {title} <span>{subtitle}</span>
             </h1>
-            <ActionButton href="#" label="Read More" padClass='true' />
+            <ActionButton
+              href="/home"
+              label="Read More"
+              padClass="true"
+              title={title}
+              subtitle={subtitle}
+            />
           </div>
         </div>
       </div>

@@ -1,7 +1,11 @@
+import HeroPageSections from "@/component/HeroPAgeSections";
+import { StaffSection } from "@/component/StaffSection";
+
 export default function Teachers() {
   return (
     <div>
-      <h1>Hello Teachers</h1>
+      <HeroPageSections heroText="Teachers" />
+      <StaffSection isHomePage={false} />
     </div>
   );
 }

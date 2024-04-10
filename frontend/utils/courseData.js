@@ -27,4 +27,18 @@ export const courseData = [
     description:
       "Separated they live in. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country.",
   },
+  {
+    imgSrc: "images/course-5.jpg",
+    title: "Software Engineering Lesson",
+    classTime: "9:00am - 10am",
+    description:
+      "Separated they live in. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country.",
+  },
+  {
+    imgSrc: "images/course-6.jpg",
+    title: "Data Analysis Lesson",
+    classTime: "9:00am - 10am",
+    description:
+      "Separated they live in. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country.",
+  },
 ];

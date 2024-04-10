@@ -7,7 +7,7 @@ import { NavLinks } from "./NavLinks";
 
 export function Navbar() {
   const links = [
-    { href: "/", text: "Home" },
+    { href: "/home", text: "Home" },
     { href: "/about", text: "About" },
     { href: "/teacher", text: "Teacher" },
     { href: "/courses", text: "Courses" },

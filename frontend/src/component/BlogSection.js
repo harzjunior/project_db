@@ -2,10 +2,12 @@ import React from "react";
 import { blogData } from "../../utils/blogData";
 import BlogItem from "./BlogItem";
 
-function BlogSection() {
+function BlogSection({ isHomePage }) {
+  const displayCoursesData = isHomePage ? blogData.slice(0, 3) : blogData;
+
   return (
     <>
-      {blogData.map((blog, index) => (
+      {displayCoursesData.map((blog, index) => (
         <BlogItem
           key={index}
           date={blog.date}
@@ -13,6 +15,7 @@ function BlogSection() {
           year={blog.year}
           imgSrc={blog.imgSrc}
           title={blog.title}
+          href={blog.url}
           content={blog.content}
           admin={blog.admin}
           comments={blog.comments}

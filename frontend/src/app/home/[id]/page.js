@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function BlogPost({ params }) {
+export default function HomePost({ params }) {
   //params.slug ---> http://localhost:3000/blogposts/abc  -- will work, because the parent folder is [slug]
   //params.slug ---> http://localhost:3000/blogposts/abc/xyz -- will not work because the parent folder is not spread
   //for this to work you will need to spread parent folder ([...slug])
@@ -15,7 +15,7 @@ export default function BlogPost({ params }) {
   return (
     <div>
       {/* show the parameters of the slug (slug is just a dummy name) */}
-      <h1>Blog</h1>
+      <h1>Home</h1>
       <h2>{decodedId}</h2>
       <Link href={"/"}>Go back home</Link>
     </div>

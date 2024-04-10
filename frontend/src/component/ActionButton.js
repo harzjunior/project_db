@@ -7,11 +7,13 @@ export function ActionButton({
   blogAction,
   containerClass,
   padClass,
+  title,
+  subtitle,
 }) {
   return (
     <p className={containerClass}>
       <Link
-        href={href}
+        href={`${href}/${encodeURIComponent(title + " " + subtitle)}`}
         className={`btn 
         ${padClass ? " px-4 py-3" : ""}
          ${ActionClass ? ActionClass : "btn-secondary"}`}

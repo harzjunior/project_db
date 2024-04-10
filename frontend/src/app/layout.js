@@ -17,6 +17,11 @@ export default function RootLayout({ children }) {
       <Head>
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description} />
+        <script
+          src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=init"
+          async
+          defer
+        ></script>
       </Head>
       <div className={FrederickatheGreat.className}>
         <Navbar />

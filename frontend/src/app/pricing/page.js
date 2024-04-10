@@ -1,7 +1,11 @@
-export default function Prices() {
+import HeroPageSections from "@/component/HeroPAgeSections";
+import { PricingPage } from "@/component/PricingPage";
+
+export default function Pricing() {
   return (
     <div>
-      <h1>Hello Prices</h1>
+      <HeroPageSections heroText="Pricing" />
+      <PricingPage isHomePage={false} />
     </div>
   );
 }

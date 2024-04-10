@@ -1,7 +1,7 @@
 const recentBlogData = [
   {
     title: "Even the all-powerful Pointing has no control about",
-    url: "#",
+    url: "/blog",
     imgSrc: "images/image_1.jpg",
     date: "Dec 11, 2017",
     author: "Admin",
@@ -9,7 +9,7 @@ const recentBlogData = [
   },
   {
     title: "Even the all-powerful Pointing has no control about",
-    url: "#",
+    url: "/blog",
     imgSrc: "images/image_2.jpg",
     date: "Mar 23, 2018",
     author: "Admin",

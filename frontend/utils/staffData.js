@@ -27,4 +27,32 @@ export const staffData = [
     description:
       "I am an ambitious workaholic, but apart from that, pretty simple person.",
   },
+  {
+    imgSrc: "images/teacher-5.jpg",
+    name: "Daniel Tribor",
+    position: "AWS Web Facilitator",
+    description:
+      "I am an ambitious workaholic, but apart from that, pretty simple person.",
+  },
+  {
+    imgSrc: "images/teacher-6.jpg",
+    name: "Mitch Parker",
+    position: "Human Resource",
+    description:
+      "I am an ambitious workaholic, but apart from that, pretty simple person.",
+  },
+  {
+    imgSrc: "images/teacher-7.jpg",
+    name: "Stella Smith",
+    position: "Marketing Manager",
+    description:
+      "I am an ambitious workaholic, but apart from that, pretty simple person.",
+  },
+  {
+    imgSrc: "images/teacher-8.jpg",
+    name: "Monshe Henderson",
+    position: "Head of Engineers",
+    description:
+      "I am an ambitious workaholic, but apart from that, pretty simple person.",
+  },
 ];

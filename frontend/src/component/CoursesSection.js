@@ -1,10 +1,12 @@
 import { courseData } from "../../utils/courseData";
 import { CourseItem } from "./CourseItem";
 
-function CoursesSection() {
+function CoursesSection({ isHomePage }) {
+  const displayCoursesData = isHomePage ? courseData.slice(0, 4) : courseData;
+
   return (
     <>
-      {courseData.map((course, index) => (
+      {displayCoursesData.map((course, index) => (
         <CourseItem
           key={index}
           imgSrc={course.imgSrc}

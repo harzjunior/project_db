@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { ActionButton } from "./ActionButton";
 
 export default function BlogItem({
@@ -6,6 +7,7 @@ export default function BlogItem({
   year,
   imgSrc,
   title,
+  href,
   content,
   admin,
   comments,
@@ -13,8 +15,8 @@ export default function BlogItem({
   return (
     <div className="col-md-6 col-lg-4 ftco-animate">
       <div className="blog-entry">
-        <a
-          href="blog-single.html"
+        <Link
+          href={`${href}/${encodeURIComponent(title)}`}
           className="block-20 d-flex align-items-end"
           style={{ backgroundImage: `url(${imgSrc})` }}
         >
@@ -23,27 +25,33 @@ export default function BlogItem({
             <span className="mos">{month}</span>
             <span className="yr">{year}</span>
           </div>
-        </a>
+        </Link>
         <div className="text bg-white p-4">
           <h3 className="heading">
-            <a href="#">{title}</a>
+            <Link href={`${href}/${encodeURIComponent(title)}`}>{title}</Link>
           </h3>
           <p>{content}</p>
           <div className="d-flex align-items-center mt-4">
             <ActionButton
-              href="#"
+              href={`${href}/${encodeURIComponent(title)}`}
               label="Read More "
               blogAction={true}
               containerClass="ml-auto mb-0"
               padClass={false}
             />
             <p className="ml-auto mb-0">
-              <a href="#" className="mr-2">
+              <Link
+                href={`${href}/${encodeURIComponent(title)}`}
+                className="mr-2"
+              >
                 {admin}
-              </a>
-              <a href="#" className="meta-chat">
+              </Link>
+              <Link
+                href={`${href}/${encodeURIComponent(title)}`}
+                className="meta-chat"
+              >
                 <span className="icon-chat"></span> {comments}
-              </a>
+              </Link>
             </p>
           </div>
         </div>

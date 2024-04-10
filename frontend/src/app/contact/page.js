@@ -1,7 +1,13 @@
+import ContactFormSection from "@/component/ContactFormSection";
+import ContactPage from "@/component/ContactPage";
+import HeroPageSections from "@/component/HeroPAgeSections";
+
 export default function Contact() {
   return (
     <div>
-      <h1>Hello Contact</h1>
+      <HeroPageSections heroText="Contact" />
+      <ContactPage />
+      <ContactFormSection />
     </div>
   );
 }

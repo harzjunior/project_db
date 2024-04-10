@@ -9,7 +9,7 @@ function RecentBlogSection() {
         <RecentBlogItem
           key={index}
           title={blog.title}
-          url={blog.url}
+          href={blog.url}
           imgSrc={blog.imgSrc}
           author={blog.author}
           comments={blog.comments}

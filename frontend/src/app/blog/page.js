@@ -1,7 +1,13 @@
+import BlogPage from "@/component/BlogPage";
+import HeroPageSections from "@/component/HeroPAgeSections";
+import Pagination from "@/component/Pagination";
+
 export default function Blog() {
   return (
     <div>
-      <h1>Hello Blog</h1>
+      <HeroPageSections heroText="Blog" />
+      <BlogPage isHomePage={false} />
+      <Pagination />
     </div>
   );
 }
