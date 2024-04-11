@@ -1,3 +1,5 @@
+import BlogArticle from "@/component/BlogArticle";
+import HeroPageSections from "@/component/HeroPAgeSections";
 import Link from "next/link";
 
 export default function BlogPost({ params }) {
@@ -15,9 +17,12 @@ export default function BlogPost({ params }) {
   return (
     <div>
       {/* show the parameters of the slug (slug is just a dummy name) */}
-      <h1>Blog</h1>
-      <h2>{decodedId}</h2>
-      <Link href={"/"}>Go back home</Link>
+      <HeroPageSections
+        heroText="Blog "
+        singleText=" Blog Single"
+        isSingle="true"
+      />
+      <BlogArticle decodedId={decodedId} />
     </div>
   );
 }

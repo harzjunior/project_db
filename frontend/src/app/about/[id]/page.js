@@ -1,3 +1,4 @@
+import HeroPageSections from "@/component/HeroPAgeSections";
 import Link from "next/link";
 
 export default function AboutPost({ params }) {
@@ -15,6 +16,11 @@ export default function AboutPost({ params }) {
   return (
     <div>
       {/* show the parameters of the slug (slug is just a dummy name) */}
+      <HeroPageSections
+        heroText="About Us "
+        singleText=" About Single"
+        isSingle="true"
+      />
       <h1>About</h1>
       <h2>{decodedId}</h2>
       <Link href={"/"}>Go back home</Link>
