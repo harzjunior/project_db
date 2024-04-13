@@ -1,11 +1,18 @@
 import Link from "next/link";
 import React from "react";
 
-export default function HeroPageSections({ heroText, singleText, isSingle }) {
+export default function HeroPageSections({
+  heroText,
+  singleText,
+  isSingle,
+  singleImg,
+}) {
   return (
     <section
       className="hero-wrap hero-wrap-2"
-      style={{ backgroundImage: "url('images/bg_2.jpg')" }}
+      style={
+        isSingle ? singleImg : { backgroundImage: "url(/images/bg_2.jpg)" }
+      }
     >
       <div className="overlay"></div>
       <div className="container">

@@ -21,6 +21,7 @@ export default function BlogPost({ params }) {
         heroText="Blog "
         singleText=" Blog Single"
         isSingle="true"
+        singleImg={{ backgroundImage: "url(/images/bg_2.jpg)" }}
       />
       <BlogArticle decodedId={decodedId} />
     </div>

@@ -52,7 +52,7 @@ export function Footer() {
             <div className="col-md-6 col-lg-3">
               <div className="ftco-footer-widget mb-5">
                 <h2 className="ftco-heading-2">Recent Blog</h2>
-                <RecentBlogSection />
+                <RecentBlogSection isHomeBlog={true} />
               </div>
             </div>
             <div className="col-md-6 col-lg-3">

@@ -1,19 +1,27 @@
 const recentBlogData = [
   {
-    title: "Even the all-powerful Pointing has no control about",
+    title: "First recently all-powerful Pointing has no control about",
     url: "/blog",
-    imgSrc: "images/image_1.jpg",
+    imgSrc: "/images/image_1.jpg",
     date: "Dec 11, 2017",
     author: "Admin",
-    comments: 19,
+    comments: 11,
   },
   {
-    title: "Even the all-powerful Pointing has no control about",
+    title: "Second recently all-powerful Pointing has no control about",
     url: "/blog",
-    imgSrc: "images/image_2.jpg",
+    imgSrc: "/images/image_2.jpg",
     date: "Mar 23, 2018",
     author: "Admin",
-    comments: 19,
+    comments: 23,
+  },
+  {
+    title: "Third recently all-powerful Pointing has no control about",
+    url: "/blog",
+    imgSrc: "/images/image_3.jpg",
+    date: "Jun 18, 2021",
+    author: "Admin",
+    comments: 18,
   },
 ];
 

@@ -20,6 +20,7 @@ export default function PricePost({ params }) {
         heroText="Pricing"
         singleText="Pricing Single"
         isSingle="true"
+        singleImg={{ backgroundImage: "url(/images/bg_2.jpg)" }}
       />
       <h1>Pricing</h1>
       <h2>{decodedId}</h2>

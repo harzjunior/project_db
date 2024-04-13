@@ -20,6 +20,7 @@ export default function AboutPost({ params }) {
         heroText="About Us "
         singleText=" About Single"
         isSingle="true"
+        singleImg={{ backgroundImage: "url(/images/bg_2.jpg)" }}
       />
       <h1>About</h1>
       <h2>{decodedId}</h2>

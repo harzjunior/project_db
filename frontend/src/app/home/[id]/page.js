@@ -20,6 +20,7 @@ export default function HomePost({ params }) {
         heroText="Home"
         singleText="Home Single"
         isSingle="true"
+        singleImg={{ backgroundImage: "url(/images/bg_2.jpg)" }}
       />
       <h1>Home</h1>
       <h2>{decodedId}</h2>

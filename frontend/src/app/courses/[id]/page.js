@@ -20,6 +20,7 @@ export default function CoursePost({ params }) {
         heroText="Courses "
         singleText=" Course Single"
         isSingle="true"
+        singleImg={{ backgroundImage: "url(/images/bg_2.jpg)" }}
       />
       <h1>Course</h1>
       <h2>{decodedId}</h2>
