@@ -1,4 +1,3 @@
-import React from "react";
 import { WelcomeSection } from "./WelcomeSection";
 import { ServicesSection } from "./ServicesSection";
 

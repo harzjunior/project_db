@@ -1,4 +1,3 @@
-import React from "react";
 import { counterData } from "../../utils/counterData";
 import { CountItems } from "./CountItems";
 

@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { ActionButton } from "./ActionButton";
 
 export function SliderItem({ backgroundImage, title, subtitle }) {

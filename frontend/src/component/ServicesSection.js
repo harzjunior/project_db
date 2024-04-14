@@ -1,4 +1,3 @@
-import React from "react";
 import { OfferItem } from "./OfferItem";
 import { offerData } from "../../utils/offerData";
 

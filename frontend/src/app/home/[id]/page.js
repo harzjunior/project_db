@@ -1,3 +1,4 @@
+import BlogArticle from "@/component/BlogArticle";
 import HeroPageSections from "@/component/HeroPAgeSections";
 import Link from "next/link";
 
@@ -22,9 +23,7 @@ export default function HomePost({ params }) {
         isSingle="true"
         singleImg={{ backgroundImage: "url(/images/bg_2.jpg)" }}
       />
-      <h1>Home</h1>
-      <h2>{decodedId}</h2>
-      <Link href={"/"}>Go back home</Link>
+      <BlogArticle decodedId={decodedId} />
     </div>
   );
 }

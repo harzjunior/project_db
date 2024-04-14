@@ -1,5 +1,3 @@
-import React from "react";
-
 export function ServiceItem({ iconClass, bgColor, heading, description }) {
   return (
     <div className="col-md-3 d-flex services align-self-stretch pb-4 px-4 ftco-animate">

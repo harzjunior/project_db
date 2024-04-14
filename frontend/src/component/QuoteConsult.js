@@ -1,4 +1,3 @@
-import React from "react";
 import InputData from "./InputData";
 
 export default function QuoteConsult() {

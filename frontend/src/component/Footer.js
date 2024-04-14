@@ -1,6 +1,6 @@
 "use client";
 
-import { Link } from "react-scroll";
+import Link from "next/link";
 import { NavLinks } from "./NavLinks";
 import RecentBlogSection from "./RecentBlogSection";
 import SocialLinks from "./SocialLinks";

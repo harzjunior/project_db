@@ -1,5 +1,3 @@
-import React from "react";
-
 export default function InputData({
   type,
   inputClass,
@@ -10,13 +8,13 @@ export default function InputData({
   return (
     <>
       <div className={`form-group ${Outclass}`}>
-      <input
-        type={type}
-        className={inputClass}
-        placeholder={placeholder}
-        value={value}
-        required
-      />
+        <input
+          type={type}
+          className={inputClass}
+          placeholder={placeholder}
+          value={value}
+          required
+        />
       </div>
     </>
   );

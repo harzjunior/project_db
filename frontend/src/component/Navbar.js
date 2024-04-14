@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import { NavbarToggle } from "./NavbarToggle";
 import { ContactInfo } from "./ContactInfo";
 import { Logo } from "./Logo";

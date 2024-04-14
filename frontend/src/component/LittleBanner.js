@@ -1,4 +1,3 @@
-import React from "react";
 import { ServiceItem } from "./ServiceItem";
 import servicesData from "../../utils/servicesData";
 

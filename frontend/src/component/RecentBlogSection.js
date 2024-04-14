@@ -1,4 +1,3 @@
-import React from "react";
 import { RecentBlogItem } from "./RecentBlogItem";
 import recentBlogData from "../../utils/recentBlogData";
 

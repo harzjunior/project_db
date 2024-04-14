@@ -1,4 +1,3 @@
-import React from "react";
 import { blogData } from "../../utils/blogData";
 import BlogItem from "./BlogItem";
 

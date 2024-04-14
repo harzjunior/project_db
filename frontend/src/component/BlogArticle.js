@@ -1,5 +1,3 @@
-import ArticleAuthor from "./ArticleAuthor";
-import CommentCard from "./CommentReplies";
 import {
   categories,
   tagCloud,
@@ -7,6 +5,7 @@ import {
   articleTags,
 } from "../../utils/singleData";
 import Link from "next/link";
+import ArticleAuthor from "./ArticleAuthor";
 import RecentBlogSection from "./RecentBlogSection";
 import CommentList from "./CommentList";
 
@@ -24,9 +23,6 @@ export default function BlogArticle({ decodedId }) {
               dolore voluptas, omnis molestias odio dignissimos culpa ex earum
               nisi consequatur quos odit quasi repellat qui officiis reiciendis
               incidunt hic non? Debitis commodi aut, adipisci.
-            </p>
-            <p>
-              <img src="/images/image_2.jpg" alt="" className="img-fluid" />
             </p>
             <p>
               Quisquam esse aliquam fuga distinctio, quidem delectus veritatis
@@ -74,7 +70,6 @@ export default function BlogArticle({ decodedId }) {
             <div className="pt-5 mt-5">
               <h3 className="mb-5 h4 font-weight-bold">6 Comments</h3>
               <CommentList />
-
               <div className="comment-form-wrap pt-5">
                 <h3 className="mb-5 h4 font-weight-bold">Leave a comment</h3>
                 <form action="#" className="p-5 bg-light">

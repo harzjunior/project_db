@@ -2,7 +2,6 @@ const express = require("express");
 const path = require("path");
 // const cors = require("cors"); // Import the cors middleware
 const { ApolloServer } = require("apollo-server-express");
-const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const typeDefs = require("./graphql/schema");
 const resolvers = require("./graphql/resolvers");

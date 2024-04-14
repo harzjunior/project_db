@@ -12,5 +12,6 @@ export const scriptImports = [
   "/js/jquery.animateNumber.min.js",
   "/js/scrollax.min.js",
   "/js/google-map.js",
+  "https://cdn.jsdelivr.net/npm/flatpickr", // Add Flatpickr CDN here
   "/js/main.js",
 ];

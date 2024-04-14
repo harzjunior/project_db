@@ -1,6 +1,5 @@
 import BlogArticle from "@/component/BlogArticle";
 import HeroPageSections from "@/component/HeroPAgeSections";
-import Link from "next/link";
 
 export default function BlogPost({ params }) {
   //params.slug ---> http://localhost:3000/blogposts/abc  -- will work, because the parent folder is [slug]

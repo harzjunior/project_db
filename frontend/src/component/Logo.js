@@ -1,7 +1,9 @@
+import Link from "next/link";
+
 export function Logo() {
   return (
-    <a className="navbar-brand" href="/">
+    <Link href="/" className="navbar-brand">
       ByteBuddiez
-    </a>
+    </Link>
   );
 }

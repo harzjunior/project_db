@@ -1,5 +1,3 @@
-import React from "react";
-
 export function OfferItem({ iconClass, heading, description }) {
   return (
     <div class="col-lg-6">

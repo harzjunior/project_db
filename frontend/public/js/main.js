@@ -254,10 +254,19 @@ AOS.init({
     fixedContentPos: false,
   });
 
-  $(".appointment_date").datepicker({
-    format: "m/d/yyyy",
-    autoclose: true,
+  // Initialize Flatpickr for date selection
+  $(".appointment_date").flatpickr({
+    dateFormat: "m/d/Y", // Format for month/day/year
+    onClose: function (selectedDates, dateStr, instance) {
+      // Close the datepicker after selection
+      instance.close();
+    },
   });
 
-  $(".appointment_time").timepicker();
+  // Initialize Flatpickr for time selection
+  $(".appointment_time").flatpickr({
+    enableTime: true, // Enable time selection
+    noCalendar: true, // Disable calendar
+    dateFormat: "H:i", // Format for hours and minutes
+  });
 })(jQuery);

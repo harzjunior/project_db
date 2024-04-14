@@ -1,13 +1,6 @@
 import Link from "next/link";
-import React from "react";
 
-export default function CommentItem({
-  srcImg,
-  title,
-  commentedDate,
-  comment,
-  href,
-}) {
+export default function CommentItem({ srcImg, title, commentedDate, comment }) {
   return (
     <>
       {/* Render the commenter's image */}
