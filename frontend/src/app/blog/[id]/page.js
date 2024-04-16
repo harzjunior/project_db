@@ -22,7 +22,7 @@ export default function BlogPost({ params }) {
         isSingle="true"
         singleImg={{ backgroundImage: "url(/images/bg_2.jpg)" }}
       />
-      <BlogArticle decodedId={decodedId} />
+      <BlogArticle decodedId={decodedId} showCom={true} />
     </div>
   );
 }

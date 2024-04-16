@@ -9,7 +9,7 @@ export default function TestimonyCarousel() {
           <div className="carousel-testimony owl-carousel">
             {testimonyData.map((testimony, index) => (
               <TestimonyItem
-                index={index}
+                key={index}
                 imgSrc={testimony.imgSrc}
                 text={testimony.text}
                 name={testimony.name}

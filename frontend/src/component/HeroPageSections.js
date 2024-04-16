@@ -42,7 +42,7 @@ export default function HeroPageSections({
               </span>
               {isSingle && (
                 <span>
-                  {singleText} <i class="ion-ios-arrow-forward"></i>
+                  {singleText} <i className="ion-ios-arrow-forward"></i>
                 </span>
               )}
             </p>

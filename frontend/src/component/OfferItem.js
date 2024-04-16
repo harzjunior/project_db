@@ -1,6 +1,6 @@
 export function OfferItem({ iconClass, heading, description }) {
   return (
-    <div class="col-lg-6">
+    <div className="col-lg-6">
       <div className="services-2 d-flex">
         <div className="icon mt-2 mr-3 d-flex justify-content-center align-items-center">
           <span className={iconClass}></span>

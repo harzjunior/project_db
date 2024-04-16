@@ -4,7 +4,7 @@ import { ContactInfo } from "./ContactInfo";
 import { Logo } from "./Logo";
 import { NavLinks } from "./NavLinks";
 
-export function Navbar() {
+export function Navbar({ scrolled }) {
   const links = [
     { href: "/home", text: "Home" },
     { href: "/about", text: "About" },
@@ -14,11 +14,17 @@ export function Navbar() {
     { href: "/blog", text: "Blog" },
     { href: "/contact", text: "Contact" },
   ];
+
+  const navbarClass = `navbar navbar-expand-lg navbar-dark bg-dark ftco_navbar ftco-navbar-light${
+    scrolled ? " scrolled" : ""
+  }`;
+
   return (
     <>
       <ContactInfo />
       <nav
-        className="navbar navbar-expand-lg navbar-dark bg-dark ftco_navbar ftco-navbar-light"
+        // className={"navbar navbar-expand-lg navbar-dark bg-dark ftco_navbar ftco-navbar-light"}
+        className={navbarClass}
         id="ftco-navbar"
       >
         <div className="container d-flex align-items-center">

@@ -1,8 +1,8 @@
-export default function TestimonyItem({ index, imgSrc, text, name, position }) {
+export default function TestimonyItem({ imgSrc, text, name, position }) {
   return (
     <>
       <div className="item">
-        <div key={index} class="testimony-wrap d-flex">
+        <div className="testimony-wrap d-flex">
           <div
             className="user-img mr-4"
             style={{ backgroundImage: `url(${imgSrc})` }}

@@ -9,7 +9,7 @@ import ArticleAuthor from "./ArticleAuthor";
 import RecentBlogSection from "./RecentBlogSection";
 import CommentList from "./CommentList";
 
-export default function BlogArticle({ decodedId }) {
+export default function BlogArticle({ decodedId, showCom }) {
   return (
     <section className="ftco-section">
       <div className="container">
@@ -24,6 +24,31 @@ export default function BlogArticle({ decodedId }) {
               nisi consequatur quos odit quasi repellat qui officiis reiciendis
               incidunt hic non? Debitis commodi aut, adipisci.
             </p>
+            {showCom == true ? (
+              <p>
+                <img src="/images/image_2.jpg" alt="" className="img-fluid" />
+              </p>
+            ) : (
+              <>
+                <p>
+                  Quisquam esse aliquam fuga distinctio, quidem delectus
+                  veritatis reiciendis. Nihil explicabo quod, est eos ipsum.
+                  Unde aut non tenetur tempore, nisi culpa voluptate maiores
+                  officiis quis vel ab consectetur suscipit veritatis nulla quos
+                  quia aspernatur perferendis, libero sint. Error, velit, porro.
+                  Deserunt minus, quibusdam iste enim veniam, modi rem maiores.
+                </p>
+                <p>
+                  Odit voluptatibus, eveniet vel nihil cum ullam dolores
+                  laborum, quo velit commodi rerum eum quidem pariatur! Quia
+                  fuga iste tenetur, ipsa vel nisi in dolorum consequatur,
+                  veritatis porro explicabo soluta commodi libero voluptatem
+                  similique id quidem? Blanditiis voluptates aperiam non magni.
+                  Reprehenderit nobis odit inventore, quia laboriosam harum
+                  excepturi ea.
+                </p>
+              </>
+            )}
             <p>
               Quisquam esse aliquam fuga distinctio, quidem delectus veritatis
               reiciendis. Nihil explicabo quod, est eos ipsum. Unde aut non
@@ -59,52 +84,63 @@ export default function BlogArticle({ decodedId }) {
               </div>
             </div>
 
-            <ArticleAuthor
-              imgSrc="/images/teacher-1.jpg"
-              alt="Image placeholder"
-              className="img-fluid mb-4"
-              title="George Washington"
-              desc="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque, autem necessitatibus voluptate quod mollitia delectus aut, sunt placeat nam vero culpa sapiente consectetur similique, inventore eos fugit cupiditate numquam!"
-            />
-
-            <div className="pt-5 mt-5">
-              <h3 className="mb-5 h4 font-weight-bold">6 Comments</h3>
-              <CommentList />
-              <div className="comment-form-wrap pt-5">
-                <h3 className="mb-5 h4 font-weight-bold">Leave a comment</h3>
-                <form action="#" className="p-5 bg-light">
-                  <div className="form-group">
-                    <label htmlFor="name">Name *</label>
-                    <input type="text" className="form-control" id="name" />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="email">Email *</label>
-                    <input type="email" className="form-control" id="email" />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="website">Website</label>
-                    <input type="text" className="form-control" id="website" />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="message">Message</label>
-                    <textarea
-                      name=""
-                      id="message"
-                      cols="30"
-                      rows="10"
-                      className="form-control"
-                    ></textarea>
-                  </div>
-                  <div className="form-group">
-                    <input
-                      type="submit"
-                      value="Post Comment"
-                      className="btn py-3 px-4 btn-primary"
-                    />
-                  </div>
-                </form>
+            {showCom && (
+              <ArticleAuthor
+                imgSrc={
+                  showCom === true
+                    ? "/images/teacher-1.jpg"
+                    : "/images/course-6.jpg"
+                }
+                alt="Image placeholder"
+                className="img-fluid mb-4"
+                title="George Washington"
+                desc="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque, autem necessitatibus voluptate quod mollitia delectus aut, sunt placeat nam vero culpa sapiente consectetur similique, inventore eos fugit cupiditate numquam!"
+              />
+            )}
+            {showCom && (
+              <div className="pt-5 mt-5">
+                <h3 className="mb-5 h4 font-weight-bold">6 Comments</h3>
+                <CommentList />
+                <div className="comment-form-wrap pt-5">
+                  <h3 className="mb-5 h4 font-weight-bold">Leave a comment</h3>
+                  <form action="#" className="p-5 bg-light">
+                    <div className="form-group">
+                      <label htmlFor="name">Name *</label>
+                      <input type="text" className="form-control" id="name" />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="email">Email *</label>
+                      <input type="email" className="form-control" id="email" />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="website">Website</label>
+                      <input
+                        type="text"
+                        className="form-control"
+                        id="website"
+                      />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="message">Message</label>
+                      <textarea
+                        name=""
+                        id="message"
+                        cols="30"
+                        rows="10"
+                        className="form-control"
+                      ></textarea>
+                    </div>
+                    <div className="form-group">
+                      <input
+                        type="submit"
+                        value="Post Comment"
+                        className="btn py-3 px-4 btn-primary"
+                      />
+                    </div>
+                  </form>
+                </div>
               </div>
-            </div>
+            )}
           </div>
 
           <div className="col-lg-4 sidebar ftco-animate">
@@ -137,10 +173,12 @@ export default function BlogArticle({ decodedId }) {
             </div>
 
             {/* Popular Articles */}
-            <div className="sidebar-box ftco-animate">
-              <h3>Popular Articles</h3>
-              <RecentBlogSection isHomeBlog={false} />
-            </div>
+            {showCom && (
+              <div className="sidebar-box ftco-animate">
+                <h3>Popular Articles</h3>
+                <RecentBlogSection isHomeBlog={false} />
+              </div>
+            )}
 
             {/* Tag Cloud */}
             <div className="sidebar-box ftco-animate">
@@ -173,15 +211,17 @@ export default function BlogArticle({ decodedId }) {
             </div>
 
             {/* Paragraph */}
-            <div className="sidebar-box ftco-animate">
-              <h3>Paragraph</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Ducimus itaque, autem necessitatibus voluptate quod mollitia
-                delectus aut, sunt placeat nam vero culpa sapiente consectetur
-                similique, inventore eos fugit cupiditate numquam!
-              </p>
-            </div>
+            {showCom && (
+              <div className="sidebar-box ftco-animate">
+                <h3>Paragraph</h3>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Ducimus itaque, autem necessitatibus voluptate quod mollitia
+                  delectus aut, sunt placeat nam vero culpa sapiente consectetur
+                  similique, inventore eos fugit cupiditate numquam!
+                </p>
+              </div>
+            )}
           </div>
         </div>
       </div>

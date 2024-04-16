@@ -1,6 +1,5 @@
 import BlogArticle from "@/component/BlogArticle";
 import HeroPageSections from "@/component/HeroPAgeSections";
-import Link from "next/link";
 
 export default function HomePost({ params }) {
   //params.slug ---> http://localhost:3000/blogposts/abc  -- will work, because the parent folder is [slug]
@@ -23,7 +22,7 @@ export default function HomePost({ params }) {
         isSingle="true"
         singleImg={{ backgroundImage: "url(/images/bg_2.jpg)" }}
       />
-      <BlogArticle decodedId={decodedId} />
+      <BlogArticle decodedId={decodedId} showCom={false} />
     </div>
   );
 }
